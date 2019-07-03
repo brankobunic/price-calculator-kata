@@ -11,11 +11,11 @@ public class App {
     	
     	System.out.println(book.toString());
     	
-    	book.addPercent(flatRateTax);
+    	book.addTaxPercent(flatRateTax);
     	
     	System.out.println(book.toString());
     	
-    	book.addPercent(21);
+    	book.addDiscountPercent(15);
     	
     	System.out.println(book.toString());
         	

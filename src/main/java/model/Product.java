@@ -6,6 +6,7 @@ public class Product {
 	int upc;
 	double price;
 	double priceWithTax;
+	double discountPrice;
 
 	public Product(String name, int upc, double price) {
 		super();
@@ -46,11 +47,15 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", upc=" + upc + ", price=" + price + "$" + ", priceWithTax="+ priceWithTax + "$"+ "]";
+		return "Product [name=" + name + ", upc=" + upc + ", price=" + price + "$" + ", priceWithTax="+ priceWithTax + "$"+ ", discountPrice="+ discountPrice + "$" + "]";
 	}
 	
-	public void addPercent(double percent) {
-		this.priceWithTax = this.price + ((percent/100) * this.price);
+	public void addTaxPercent(double tax) {
+		priceWithTax = price + ((tax/100) * price);
+	}
+	
+	public void addDiscountPercent(double discount) {
+		discountPrice = priceWithTax - ((discount/100) * priceWithTax);
 	}
 
 }
