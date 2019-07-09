@@ -44,6 +44,10 @@ public class Product {
 	public double getPriceWithTax() {
 		return this.priceWithTax;
 	}
+	
+	public double getDiscount() {
+		return priceWithTax - discountPrice;
+	}
 
 	@Override
 	public String toString() {
@@ -56,6 +60,8 @@ public class Product {
 	
 	public void addDiscountPercent(double discount) {
 		discountPrice = priceWithTax - ((discount/100) * priceWithTax);
+		System.out.println("Discount price is " + discountPrice);
+		System.out.println(String.valueOf(getDiscount()));
 	}
 
 }
